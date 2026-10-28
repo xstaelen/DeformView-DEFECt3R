@@ -1,0 +1,100 @@
+\begin{table*}[tb]
+    \centering
+
+    % \multirow{5}{*}{\rotatebox{90}{\parbox{1.25cm}{\centering \shortstack[c]{\text{line 1}\\\text{line 2}}}}}
+    % \multirow{3}{*}{\rotatebox{90}{\parbox{1.40cm}{\centering line 1}}}
+
+    \newcommand{\best}[1]{\textbf{#1}}
+    \newcommand{\seco}[1]{\underline{#1}}
+    \newcommand{\othe}[1]{#1}
+
+    %%% FULL PAGE VERTICAL CENTERING
+    % \vspace{1.0em}
+
+    \caption{
+        Pixel-level geometric inconsistency localization performance of MEt3R~\cite{MEt3R} and DEFECt3R (\Cref{sec:method}) on the DeformView test set (\Cref{sec:dataset}).
+        Results are reported on the full test set and per pair type, using different feature representations (DINO and DINO+MASt3R) and correspondence estimation methods (ground-truth and MASt3R-estimated camera poses).
+        %
+        Background pixels are excluded to focus the evaluation on inconsistency localization rather than trivial background classification.
+        %
+        For all-negative categories the FPR is reported instead of AUC, F1-score, precision, and recall.
+        Note that the recall is identical for the full test set and the \textit{original-deformed} subset as positive pixels occur exclusively in \textit{original-deformed} pairs.
+        Best and second-best results are shown in bold and underlined, respectively.
+        %
+        DEFECt3R consistently outperforms MEt3R. Both correspondence quality and MASt3R features contribute to performance, with the former having the larger impact.
+    }
+    \label{table:evaluation-pixel-level-fused}
+    
+
+    \begin{tabular}{l l c c c c c}
+        \toprule
+    
+        \textbf{Subset}
+        & \textbf{Metric}    
+        % & \textbf{MEt3R}~\cite{MEt3R}
+        % & \makecell[c]{
+        %     \shortstack[c]{\textbf{MEt3R}\\\cite{MEt3R}}
+        % }
+        % & \makecell[c]{
+        %     \shortstack[c]{\textbf{DEFECt3R}\\\textbf{(ours)}}
+        % } \\
+        & \multicolumn{2}{c}{\textbf{MEt3R}~\cite{MEt3R}}
+        & \multicolumn{3}{c}{\textbf{DEFECt3R (ours)}} \\
+
+        Features
+        & & DINO & DINO & DINO+MASt3R & DINO & DINO \\
+
+        Pose estimation
+        & & MASt3R & GT & MASt3R & MASt3R & GT \\
+
+        \cmidrule(lr){1-1}
+        \cmidrule(lr){2-2}
+        \cmidrule(lr){3-4}
+        \cmidrule(lr){5-7}
+
+        % \multirow{5}{*}{\rotatebox{90}{\parbox{1.40cm}{\centering Entire Test Set}}}
+        \multirow{4}{*}{\centering Entire Test Set}
+        
+        & AUC ↑         & \othe{\tr{0.5950}}  & \othe{\tr{0.5950}}  & \seco{\tr{0.7591}}  & \othe{\tr{0.7321}}  & \best{\tr{0.8091}}  \\
+        & F1-score ↑    & \othe{\tr{0.0632}}  & \othe{\tr{0.051}}   & \seco{\tr{0.1675}}  & \othe{\tr{0.1451}}  & \best{\tr{0.207}}  \\
+        & Precision ↑   & \othe{\tr{0.033}}   & \othe{\tr{0.027}}   & \seco{\tr{0.140}}   & \othe{\tr{0.109}}   & \best{\tr{0.184}}   \\
+        & Recall ↑      & \best{\tr{0.640}}   & \seco{\tr{0.390}}   & \othe{\tr{0.208}}   & \othe{\tr{0.218}}   & \othe{\tr{0.238}}   \\
+
+
+
+        \dottedline
+
+        % \multirow{5}{*}{\rotatebox{90}{\parbox{1.25cm}{\centering \shortstack[c]{\text{Original}\\\text{-Deform}}}}}
+        \multirow{4}{*}{\centering Original-Deformed}
+
+        & AUC ↑         & \othe{\tr{0.583}}   & \othe{\tr{0.571}}   & \seco{\tr{0.683}}  & \othe{\tr{0.661}}  & \best{\tr{0.723}}  \\
+        & F1-score ↑    & \othe{\tr{0.169}}   & \othe{\tr{0.133}}   & \seco{\tr{0.205}}  & \othe{\tr{0.197}}  & \best{\tr{0.235}}  \\
+        & Precision ↑   & \othe{\tr{0.098}}   & \othe{\tr{0.080}}   & \seco{\tr{0.202}}  & \othe{\tr{0.180}}  & \best{\tr{0.232}}  \\
+        & Recall ↑      & \best{\tr{0.640}}   & \seco{\tr{0.390}}   & \othe{\tr{0.208}}  & \othe{\tr{0.218}}  & \othe{\tr{0.238}}  \\
+
+        
+        \dottedline
+
+        % \multirow{2}{*}{\rotatebox{90}{\parbox{1.25cm}{\centering \shortstack[c]{\text{Deform}\\\text{-Deform}}}}}
+
+        Deformed-Deformed & & & & & \\
+        
+        \quad deformed region  
+        & FPR ↓         & \othe{\tr{0.613}}   & \othe{\tr{0.345}}   & \best{\tr{0.015}}  & \seco{\tr{0.016}}  & \othe{\tr{0.017}}  \\
+        \quad non-deformed region  
+        & FPR ↓         & \othe{\tr{0.488}}   & \othe{\tr{0.290}}   & \seco{\tr{0.020}}  & \othe{\tr{0.031}}  & \best{\tr{0.009}}  \\
+        
+        \dottedline
+
+        % \multirow{1}{*}{\rotatebox{90}{\parbox{1.25cm}{\centering \shortstack[c]{\text{Original}\\\text{-Original}}}}}
+
+        Original-Original
+        & FPR ↓         & \othe{\tr{0.470}}   & \othe{\tr{0.293}}   & \seco{\tr{0.015}}  & \othe{\tr{0.030}}  & \best{\tr{0.007}}  \\
+        
+        \bottomrule
+    \end{tabular}
+
+    % \vspace{0.5em}
+    % \vspace{-0.2em}
+
+\end{table*}

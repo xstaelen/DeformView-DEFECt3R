@@ -1,0 +1,27 @@
+\begin{figure}[h]%[tb]
+    \centering
+
+    % \vspace{0.1em}
+    \vspace{-1.2em}
+
+    % \includegraphics[width=0.9\linewidth]{\version/figures/images/intro_fig_cropped.pdf}
+    % \includegraphics[width=0.8\linewidth]{\version/figures/images/intro_fig_3_cropped_bottom.pdf}
+    \includegraphics[width=0.95\linewidth]{\version/figures/images/intro_fig_4_cropped.pdf}
+    
+    \vspace{-0.6em}
+
+    \caption{
+        An image pair, from the proposed DeformView dataset, shows two views of the same object taken from different viewpoints. While both images appear plausible in isolation, they are geometrically inconsistent with one another. 
+        The figure shows the responses produced by MEt3R~\cite{MEt3R}, the inconsistency map predicted by our proposed method, DEFECt3R, and the ground-truth annotation.
+        Existing geometric consistency methods either produce only a global consistency score or require more views than are typically available in forensic settings. In contrast, DEFECt3R directly localizes geometric inconsistencies, producing pixel-level inconsistency maps that improve explainability while achieving increased detection performance.
+    }
+
+    \Description{
+        The figure is organized into two rows. The first row shows an image pair of the same object captured from different viewpoints. The second row contains three columns. The first shows a response map produced by MEt3R, where brighter regions indicate higher predicted inconsistency. The second shows the pixel-level inconsistency map predicted by DEFECt3R. The third shows the ground-truth inconsistency mask. The inconsistent region appears as a localized area on the object and is highlighted in both predicted maps and the annotation.
+    }
+    
+    \label{figure:hero}
+
+    \vspace{-0.6em}
+    
+\end{figure}

@@ -1,0 +1,1238 @@
+\begin{figure*}[p]
+    % number of columns = 9
+
+    % \newcommand{\verticalcolumn}{0.060\linewidth}
+    % \newcommand{\subfigwidth}{0.098\linewidth} % Define a variable for the width
+    % % space inbetween = 1 - 0.060 - 9 * 0.098 = 0.058
+    % % space between 2 cols = 0.058 / 9 = 0.006444
+    % % width of 2 wide = 2 * 0.098 + 1 * 0.006444 = 0.202444
+    % \newcommand{\subfigwidthTWO}{0.202444\linewidth}
+    % % width of 4 wide = 4 * 0.098 + 3 * 0.006444 = 0.4113332
+    % \newcommand{\subfigwidthFOUR}{0.4113332\linewidth}
+    % % width of 3 wide = 3 * 0.098 + 2 * 0.006444 = 0.30688
+    % \newcommand{\subfigwidthTHREE}{0.30688\linewidth}
+    
+    % \newcommand{\subfigwidth}{0.105\linewidth} % Define a variable for the width
+    % % space inbetween = 1 - 9 * 0.105 = 0.055
+    % % space between 2 cols = 0.055 / 8 = 0.006875
+    % % width of 2 wide = 2 * 0.105 + 1 * 0.006875 = 0.216875
+    % \newcommand{\subfigwidthTWO}{0.216875\linewidth}
+    % % width of 4 wide = 4 * 0.105 + 3 * 0.006875 = 0.440625
+    % \newcommand{\subfigwidthFOUR}{0.440625\linewidth}
+    % % width of 3 wide = 3 * 0.105 + 2 * 0.006875 = 0.32875
+    % \newcommand{\subfigwidthTHREE}{0.32875\linewidth}
+
+    % \newcommand{\subfigwidth}{0.100\linewidth} % Define a variable for the width
+    % % space inbetween = 1 - 9 * 0.100 = 0.100
+    % % space between 2 cols = 0.100 / 10 = 0.0100
+    % \newcommand{\fillwidth}{0.0125\linewidth}
+    % % width of 2 wide = 2 * 0.100 + 1 * 0.0100 = 0.21
+    % \newcommand{\subfigwidthTWO}{0.21\linewidth}
+    % % width of 4 wide = 4 * 0.100 + 3 * 0.0100 = 0.43
+    % \newcommand{\subfigwidthFOUR}{0.43\linewidth}
+    % % width of 3 wide = 3 * 0.100 + 2 * 0.0100 = 0.32
+    % \newcommand{\subfigwidthTHREE}{0.32\linewidth}
+
+    \newcommand{\verticalcolumn}{0.025\linewidth}
+    \newcommand{\subfigwidth}{0.100\linewidth} % Define a variable for the width
+    % space inbetween = 1 - 0.025 - 9 * 0.100 = 0.075
+    % space between 2 cols = 0.075 / 10 = 0.0075
+    \newcommand{\figureheight}{0.100\linewidth}
+    % width of 2 wide = 2 * 0.100 + 1 * 0.0060 = 0.2075
+    \newcommand{\subfigwidthTWO}{0.2075\linewidth}
+    % width of 4 wide = 4 * 0.100 + 3 * 0.0060 = 0.4225
+    \newcommand{\subfigwidthFOUR}{0.4225\linewidth}
+    % width of 3 wide = 3 * 0.100 + 2 * 0.0060 = 0.315
+    \newcommand{\subfigwidthTHREE}{0.315\linewidth}
+
+    
+
+    \newcommand{\imagespacing}{0.3em}
+
+
+    \centering
+
+    
+    %%% FULL PAGE VERTICAL CENTERING
+    \vspace{1.0em}
+    
+
+    % Column labels
+    \begin{minipage}[c]{\verticalcolumn}
+        \phantom{\collablesmall{(a)}}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{\subfigwidthTWO}
+        \centering
+        \phantom{\collablesmall{Image 1}}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[c]{\subfigwidthFOUR}
+        \centering
+        \collablesmall{MASt3R Pose-Estimation}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[c]{\subfigwidthTHREE}
+        \centering
+        \collablesmall{GT Poses}
+    \end{minipage}
+
+    \vspace{0.8em} % Add vertical spacing between labels and images
+
+    % --------------------------------
+    %           LABLES
+    % --------------------------------
+
+    % Column labels
+    \begin{minipage}[c]{\verticalcolumn}
+        \phantom{\collablesmall{(a)}}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{\subfigwidth}
+        \centering
+        \collablesmall{View 1}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[c]{\subfigwidth}
+        \centering
+        \collablesmall{View 2}
+    \end{minipage}
+    \hfill
+    % ========================================================================================================================================
+    \begin{minipage}[c]{\subfigwidth}
+        \centering
+        \shortstack[c]{\collablesmall{Ground-}\\\collablesmall{truth}}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[c]{\subfigwidth}
+        \centering
+        % \collablesmall{MEt3R pred.}
+        \shortstack[c]{\collablesmall{MEt3R}\\\collablesmall{pred.}}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[c]{\subfigwidth}
+        \centering
+        % \collablesmall{MEt3R pred.}
+        \shortstack[c]{\collablesmall{DEFECt3R}\\\collablesmall{pred. (ours)}}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[c]{\subfigwidth}
+        \centering
+        \shortstack[c]{\collablesmall{DEFECt3R}\\\collablesmall{pred. (ours)}}
+    \end{minipage}
+    \hfill
+    % ========================================================================================================================================
+    \begin{minipage}[c]{\subfigwidth}
+        \centering
+        \shortstack[c]{\collablesmall{Ground-}\\\collablesmall{truth}}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[c]{\subfigwidth}
+        \centering
+        % \collablesmall{MEt3R pred.}
+        \shortstack[c]{\collablesmall{MEt3R}\\\collablesmall{pred.}}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[c]{\subfigwidth}
+        \centering
+        \shortstack[c]{\collablesmall{DEFECt3R}\\\collablesmall{pred. (ours)}}
+    \end{minipage}
+
+    \vspace{0.2em} % Add vertical spacing between labels and images
+
+
+    
+    % --------------------------------
+    %           FEATURES
+    % --------------------------------
+
+    % Column labels
+    \begin{minipage}[c]{\verticalcolumn}
+        \phantom{\collablesmall{(a)}}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[c]{\subfigwidth}
+        \centering
+        \phantom{\collablesmall{Image 1}}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[c]{\subfigwidth}
+        \centering
+        \phantom{\collablesmall{Image 1}}
+    \end{minipage}
+    \hfill
+    % ========================================================================================================================================
+    \begin{minipage}[c]{\subfigwidth}
+        \centering
+        \phantom{\collablesmall{Image 1}}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[c]{\subfigwidth}
+        \centering
+        % \collablesmall{MEt3R pred.}
+        \collablesmall{DINO}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[c]{\subfigwidth}
+        \centering
+        % \collablesmall{MEt3R pred.}
+        \collablesmall{DINO}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[c]{\subfigwidth}
+        \centering
+        \shortstack[c]{\collablesmall{DINO +}\\\collablesmall{MASt3R}}
+    \end{minipage}
+    \hfill
+    % ========================================================================================================================================
+    \begin{minipage}[c]{\subfigwidth}
+        \centering
+        \phantom{\collablesmall{Image 1}}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[c]{\subfigwidth}
+        \centering
+        % \collablesmall{MEt3R pred.}
+        \collablesmall{DINO}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[c]{\subfigwidth}
+        \centering
+        \collablesmall{DINO}
+    \end{minipage}
+
+    \vspace{0.3em} % Add vertical spacing between labels and images
+
+
+
+    % % -----------------------------------------
+    % %        ROW 1 (REAL-REAl) (pair_01188)
+    % % -----------------------------------------
+
+    % {
+    %    \begin{minipage}[c]{\verticalcolumn}
+    %        \phantom{\collablesmall{0}}
+    %    \end{minipage}%
+    %    \hfill
+    %     \begin{minipage}[c]{\verticalcolumn}
+    %         \phantom{\collablesmall{X}}
+    %     \end{minipage}%
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/JPEG/pair_01188_real_real_r1_img1.jpg}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/JPEG/pair_01188_real_real_r1_img2.jpg}
+    %     \end{subfigure}
+    %     \hfill
+    %     % ========================================================================================================================================
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_01188_real_real_r2_gt_mastr.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_01188_real_real_r2_metr_mastr.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_01188_real_real_r4_m3_dino_mastr_only.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_01188_real_real_r2_m1_dino_mastr.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     % ========================================================================================================================================
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_01188_real_real_r3_gt_gt.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_01188_real_real_r3_metr_gt.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_01188_real_real_r3_m2_dino_gt.png}
+    %     \end{subfigure}
+
+    %     \vspace{\imagespacing} % Add vertical spacing between labels and images
+    % }
+
+
+    % % -----------------------------------------
+    % %        ROW 2 (REAL-REAl) (pair_00094)
+    % % -----------------------------------------
+    
+    % {
+    %    \begin{minipage}[c]{\verticalcolumn}
+    %        \phantom{\collablesmall{0}}
+    %    \end{minipage}%
+    %    \hfill
+    %     \begin{minipage}[c]{\verticalcolumn}
+    %         \phantom{\collablesmall{X}}
+    %     \end{minipage}%
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/JPEG/pair_00094_real_real_r1_img1.jpg}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/JPEG/pair_00094_real_real_r1_img2.jpg}
+    %     \end{subfigure}
+    %     \hfill
+    %     % ========================================================================================================================================
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_00094_real_real_r2_gt_mastr.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_00094_real_real_r2_metr_mastr.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_00094_real_real_r4_m3_dino_mastr_only.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_00094_real_real_r2_m1_dino_mastr.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     % ========================================================================================================================================
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_00094_real_real_r3_gt_gt.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_00094_real_real_r3_metr_gt.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_00094_real_real_r3_m2_dino_gt.png}
+    %     \end{subfigure}
+
+    %     \vspace{\imagespacing} % Add vertical spacing between labels and images
+    % }
+    
+    % -----------------------------------------
+    %        ROW 3 (REAL-REAl) (pair_00400)
+    % -----------------------------------------
+    
+    {
+        \begin{minipage}[c]{\verticalcolumn}
+            \collablesmall{(a)}
+        \end{minipage}%
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/JPEG/pair_00400_real_real_r1_img1.jpg}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/JPEG/pair_00400_real_real_r1_img2.jpg}
+        \end{subfigure}
+        \hfill
+        % ========================================================================================================================================
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_00400_real_real_r2_gt_mastr.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_00400_real_real_r2_metr_mastr.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_00400_real_real_r4_m3_dino_mastr_only.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_00400_real_real_r2_m1_dino_mastr.png}
+        \end{subfigure}
+        \hfill
+        % ========================================================================================================================================
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_00400_real_real_r3_gt_gt.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_00400_real_real_r3_metr_gt.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_00400_real_real_r3_m2_dino_gt.png}
+        \end{subfigure}
+
+        \vspace{\imagespacing} % Add vertical spacing between labels and images
+    }
+
+    % -----------------------------------------
+    %        ROW 4 (REAL-REAl) (pair_01516)
+    % -----------------------------------------
+    
+    {
+        \begin{minipage}[c]{\verticalcolumn}
+            \collablesmall{(b)}
+        \end{minipage}%
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/JPEG/pair_01516_real_real_r1_img1.jpg}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/JPEG/pair_01516_real_real_r1_img2.jpg}
+        \end{subfigure}
+        \hfill
+        % ========================================================================================================================================
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_01516_real_real_r2_gt_mastr.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_01516_real_real_r2_metr_mastr.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_01516_real_real_r4_m3_dino_mastr_only.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_01516_real_real_r2_m1_dino_mastr.png}
+        \end{subfigure}
+        \hfill
+        % ========================================================================================================================================
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_01516_real_real_r3_gt_gt.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_01516_real_real_r3_metr_gt.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_01516_real_real_r3_m2_dino_gt.png}
+        \end{subfigure}
+
+        \vspace{\imagespacing} % Add vertical spacing between labels and images
+    }
+
+    % -----------------------------------------
+    %        ROW 5 (REAL-REAl) (pair_04360)
+    % -----------------------------------------
+
+    {
+        \begin{minipage}[c]{\verticalcolumn}
+            \collablesmall{(c)}
+        \end{minipage}%
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/JPEG/pair_04360_real_real_r1_img1.jpg}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/JPEG/pair_04360_real_real_r1_img2.jpg}
+        \end{subfigure}
+        \hfill
+        % ========================================================================================================================================
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_04360_real_real_r2_gt_mastr.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_04360_real_real_r2_metr_mastr.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_04360_real_real_r4_m3_dino_mastr_only.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_04360_real_real_r2_m1_dino_mastr.png}
+        \end{subfigure}
+        \hfill
+        % ========================================================================================================================================
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_04360_real_real_r3_gt_gt.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_04360_real_real_r3_metr_gt.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_04360_real_real_r3_m2_dino_gt.png}
+        \end{subfigure}
+
+        \vspace{\imagespacing} % Add vertical spacing between labels and images
+    }
+
+    % -----------------------------------------
+    %        ROW 6 (REAL-DEF) (pair_00645)
+    % -----------------------------------------
+    
+    {
+        \begin{minipage}[c]{\verticalcolumn}
+            \collablesmall{(d)}
+        \end{minipage}%
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/JPEG/pair_00645_real_def_r1_img1.jpg}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/JPEG/pair_00645_real_def_r1_img2.jpg}
+        \end{subfigure}
+        \hfill
+        % ========================================================================================================================================
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_00645_real_def_r2_gt_mastr.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_00645_real_def_r2_metr_mastr.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_00645_real_def_r4_m3_dino_mastr_only.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_00645_real_def_r2_m1_dino_mastr.png}
+        \end{subfigure}
+        \hfill
+        % ========================================================================================================================================
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_00645_real_def_r3_gt_gt.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_00645_real_def_r3_metr_gt.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_00645_real_def_r3_m2_dino_gt.png}
+        \end{subfigure}
+
+        \vspace{\imagespacing} % Add vertical spacing between labels and images
+    }
+
+    % % -----------------------------------------
+    % %        ROW 7 (REAL-DEF) (pair_01175)
+    % % -----------------------------------------
+    
+    % {
+    %     \begin{minipage}[c]{\verticalcolumn}
+    %         \phantom{\collablesmall{X}}
+    %     \end{minipage}%
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/JPEG/pair_01175_real_def_r1_img1.jpg}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/JPEG/pair_01175_real_def_r1_img2.jpg}
+    %     \end{subfigure}
+    %     \hfill
+    %     % ========================================================================================================================================
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_01175_real_def_r2_gt_mastr.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_01175_real_def_r2_metr_mastr.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_01175_real_def_r4_m3_dino_mastr_only.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_01175_real_def_r2_m1_dino_mastr.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     % ========================================================================================================================================
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_01175_real_def_r3_gt_gt.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_01175_real_def_r3_metr_gt.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_01175_real_def_r3_m2_dino_gt.png}
+    %     \end{subfigure}
+
+    %     \vspace{\imagespacing} % Add vertical spacing between labels and images
+    % }
+
+    % -----------------------------------------
+    %        ROW 8 (REAL-DEF) (pair_12132)
+    % -----------------------------------------
+    
+    {
+        \begin{minipage}[c]{\verticalcolumn}
+            \collablesmall{(e)}
+        \end{minipage}%
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/JPEG/pair_12132_real_def_r1_img1.jpg}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/JPEG/pair_12132_real_def_r1_img2.jpg}
+        \end{subfigure}
+        \hfill
+        % ========================================================================================================================================
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_12132_real_def_r2_gt_mastr.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_12132_real_def_r2_metr_mastr.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_12132_real_def_r4_m3_dino_mastr_only.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_12132_real_def_r2_m1_dino_mastr.png}
+        \end{subfigure}
+        \hfill
+        % ========================================================================================================================================
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_12132_real_def_r3_gt_gt.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_12132_real_def_r3_metr_gt.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_12132_real_def_r3_m2_dino_gt.png}
+        \end{subfigure}
+
+        \vspace{\imagespacing} % Add vertical spacing between labels and images
+    }
+
+    % % % -----------------------------------------
+    % % %        ROW 9 (REAL-DEF) (pair_05476)
+    % % % -----------------------------------------
+    
+    % {
+    %     % \begin{minipage}[c]{\verticalcolumn}
+    %     %     \centering
+    %     %     \rotatebox{90}{\collablesmall{Original-Deformed}}
+    %     % \end{minipage}%
+    %     % \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/JPEG/pair_05476_real_def_r1_img1.jpg}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/JPEG/pair_05476_real_def_r1_img2.jpg}
+    %     \end{subfigure}
+    %     \hfill
+    %     % ========================================================================================================================================
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_05476_real_def_r2_gt_mastr.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_05476_real_def_r2_metr_mastr.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_05476_real_def_r4_m3_dino_mastr_only.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_05476_real_def_r2_m1_dino_mastr.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     % ========================================================================================================================================
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_05476_real_def_r3_gt_gt.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_05476_real_def_r3_metr_gt.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_05476_real_def_r3_m2_dino_gt.png}
+    %     \end{subfigure}
+
+    %     \vspace{\imagespacing} % Add vertical spacing between labels and images
+    % }
+
+    % % -----------------------------------------
+    % %        ROW 10 (REAL-DEF) (pair_09349)
+    % % -----------------------------------------
+
+    % {
+    %     % \begin{minipage}[c]{\verticalcolumn}
+    %     %     \phantom{\collablesmall{X}}
+    %     % \end{minipage}%
+    %     % \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/JPEG/pair_09349_real_def_r1_img1.jpg}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/JPEG/pair_09349_real_def_r1_img2.jpg}
+    %     \end{subfigure}
+    %     \hfill
+    %     % ========================================================================================================================================
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_09349_real_def_r2_gt_mastr.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_09349_real_def_r2_metr_mastr.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_09349_real_def_r4_m3_dino_mastr_only.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_09349_real_def_r2_m1_dino_mastr.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     % ========================================================================================================================================
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_09349_real_def_r3_gt_gt.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_09349_real_def_r3_metr_gt.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_09349_real_def_r3_m2_dino_gt.png}
+    %     \end{subfigure}
+
+    %     \vspace{\imagespacing} % Add vertical spacing between labels and images
+    % }
+
+    % -----------------------------------------
+    %        ROW 11 (REAL-DEF) (pair_12745)
+    % -----------------------------------------
+    
+    {
+        \begin{minipage}[c]{\verticalcolumn}
+            \collablesmall{(f)}
+        \end{minipage}%
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/JPEG/pair_12745_real_def_r1_img1.jpg}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/JPEG/pair_12745_real_def_r1_img2.jpg}
+        \end{subfigure}
+        \hfill
+        % ========================================================================================================================================
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_12745_real_def_r2_gt_mastr.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_12745_real_def_r2_metr_mastr.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_12745_real_def_r4_m3_dino_mastr_only.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_12745_real_def_r2_m1_dino_mastr.png}
+        \end{subfigure}
+        \hfill
+        % ========================================================================================================================================
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_12745_real_def_r3_gt_gt.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_12745_real_def_r3_metr_gt.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_12745_real_def_r3_m2_dino_gt.png}
+        \end{subfigure}
+
+        \vspace{\imagespacing} % Add vertical spacing between labels and images
+    }
+
+    % -----------------------------------------
+    %        ROW 12 (DEF-DEF) (pair_03517)
+    % -----------------------------------------
+    
+    {
+        \begin{minipage}[c]{\verticalcolumn}
+            \collablesmall{(g)}
+        \end{minipage}%
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/JPEG/pair_03517_def_def_r1_img1.jpg}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/JPEG/pair_03517_def_def_r1_img2.jpg}
+        \end{subfigure}
+        \hfill
+        % ========================================================================================================================================
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_03517_def_def_r2_gt_mastr.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_03517_def_def_r2_metr_mastr.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_03517_def_def_r4_m3_dino_mastr_only.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_03517_def_def_r2_m1_dino_mastr.png}
+        \end{subfigure}
+        \hfill
+        % ========================================================================================================================================
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_03517_def_def_r3_gt_gt.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_03517_def_def_r3_metr_gt.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_03517_def_def_r3_m2_dino_gt.png}
+        \end{subfigure}
+
+        \vspace{\imagespacing} % Add vertical spacing between labels and images
+    }
+
+
+    % % -----------------------------------------
+    % %        ROW 13 (DEF-DEF) (pair_03999)
+    % % -----------------------------------------
+
+    % {
+    %     \begin{minipage}[c]{\verticalcolumn}
+    %         \phantom{\collablesmall{X}}
+    %     \end{minipage}%
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/JPEG/pair_03999_def_def_r1_img1.jpg}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/JPEG/pair_03999_def_def_r1_img2.jpg}
+    %     \end{subfigure}
+    %     \hfill
+    %     % ========================================================================================================================================
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_03999_def_def_r2_gt_mastr.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_03999_def_def_r2_metr_mastr.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_03999_def_def_r4_m3_dino_mastr_only.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_03999_def_def_r2_m1_dino_mastr.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     % ========================================================================================================================================
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_03999_def_def_r3_gt_gt.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_03999_def_def_r3_metr_gt.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_03999_def_def_r3_m2_dino_gt.png}
+    %     \end{subfigure}
+
+    %     \vspace{\imagespacing} % Add vertical spacing between labels and images
+    % }
+
+    % -----------------------------------------
+    %        ROW 14 (DEF-DEF) (pair_04212)
+    % -----------------------------------------
+
+    {
+        \begin{minipage}[c]{\verticalcolumn}
+            \collablesmall{(h)}
+        \end{minipage}%
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/JPEG/pair_04212_def_def_r1_img1.jpg}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/JPEG/pair_04212_def_def_r1_img2.jpg}
+        \end{subfigure}
+        \hfill
+        % ========================================================================================================================================
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_04212_def_def_r2_gt_mastr.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_04212_def_def_r2_metr_mastr.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_04212_def_def_r4_m3_dino_mastr_only.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_04212_def_def_r2_m1_dino_mastr.png}
+        \end{subfigure}
+        \hfill
+        % ========================================================================================================================================
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_04212_def_def_r3_gt_gt.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_04212_def_def_r3_metr_gt.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_04212_def_def_r3_m2_dino_gt.png}
+        \end{subfigure}
+
+        \vspace{\imagespacing} % Add vertical spacing between labels and images
+    }
+
+    % % -----------------------------------------
+    % %        ROW 15 (DEF-DEF) (pair_05482)
+    % % -----------------------------------------
+
+    % {
+    %     \begin{minipage}[c]{\verticalcolumn}
+    %         \phantom{\collablesmall{X}}
+    %     \end{minipage}%
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/JPEG/pair_05482_def_def_r1_img1.jpg}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/JPEG/pair_05482_def_def_r1_img2.jpg}
+    %     \end{subfigure}
+    %     \hfill
+    %     % ========================================================================================================================================
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_05482_def_def_r2_gt_mastr.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_05482_def_def_r2_metr_mastr.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_05482_def_def_r4_m3_dino_mastr_only.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_05482_def_def_r2_m1_dino_mastr.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     % ========================================================================================================================================
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_05482_def_def_r3_gt_gt.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_05482_def_def_r3_metr_gt.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_05482_def_def_r3_m2_dino_gt.png}
+    %     \end{subfigure}
+
+    %     \vspace{\imagespacing} % Add vertical spacing between labels and images
+    % }
+
+    % % -----------------------------------------
+    % %        ROW 16 (DEF-DEF) (pair_05483)
+    % % -----------------------------------------
+
+    % {
+    %     \begin{minipage}[c]{\verticalcolumn}
+    %         \phantom{\collablesmall{X}}
+    %     \end{minipage}%
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/JPEG/pair_05483_def_def_r1_img1.jpg}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/JPEG/pair_05483_def_def_r1_img2.jpg}
+    %     \end{subfigure}
+    %     \hfill
+    %     % ========================================================================================================================================
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_05483_def_def_r2_gt_mastr.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_05483_def_def_r2_metr_mastr.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_05483_def_def_r4_m3_dino_mastr_only.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_05483_def_def_r2_m1_dino_mastr.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     % ========================================================================================================================================
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_05483_def_def_r3_gt_gt.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_05483_def_def_r3_metr_gt.png}
+    %     \end{subfigure}
+    %     \hfill
+    %     \begin{subfigure}[c]{\subfigwidth}
+    %         \centering
+    %         \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_05483_def_def_r3_m2_dino_gt.png}
+    %     \end{subfigure}
+
+    %     \vspace{\imagespacing} % Add vertical spacing between labels and images
+    % }
+    
+    % -----------------------------------------
+    %        ROW 17 (DEF-DEF) (pair_05730)
+    % -----------------------------------------
+
+    {
+        \begin{minipage}[c]{\verticalcolumn}
+            \collablesmall{(i)}
+        \end{minipage}%
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/JPEG/pair_05730_def_def_r1_img1.jpg}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/JPEG/pair_05730_def_def_r1_img2.jpg}
+        \end{subfigure}
+        \hfill
+        % ========================================================================================================================================
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_05730_def_def_r2_gt_mastr.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_05730_def_def_r2_metr_mastr.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_05730_def_def_r4_m3_dino_mastr_only.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_05730_def_def_r2_m1_dino_mastr.png}
+        \end{subfigure}
+        \hfill
+        % ========================================================================================================================================
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_05730_def_def_r3_gt_gt.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_05730_def_def_r3_metr_gt.png}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[c]{\subfigwidth}
+            \centering
+            \includegraphics[width=\linewidth]{\version/figures/images/visualizations_complete/pair_05730_def_def_r3_m2_dino_gt.png}
+        \end{subfigure}
+
+        \vspace{-0.6em}
+    }
+    
+    \caption{
+        Image pairs from the DeformView test set and their corresponding predictions by all evaluated methods. 
+        %
+        Rows (a)--(c) show consistent \textit{original-original} pairs, rows (d)--(f) inconsistent \textit{original-deformed} pairs, and rows (g)--(i) consistent \textit{deformed-deformed} pairs.
+        %
+        Predictions are shown from the perspective of view~1, with the object outline indicated in yellow.
+        %
+        The examples highlight common failure modes, including reprojection errors and visually unusual yet geometrically consistent regions, and show how DEFECt3R suppresses many resulting false positives.
+    }
+
+    \Description{
+        A large grid of qualitative examples from the DeformView test set. The figure is organized into nine rows grouped into three categories: consistent original-original pairs, inconsistent original-deformed pairs, and consistent deformed-deformed pairs. Each row begins with two input views of the same object. The remaining columns show ground-truth inconsistency masks and predictions produced by MEt3R and DEFECt3R, using both MASt3R-estimated poses and ground-truth poses. Predictions are visualized as heat maps, where brighter regions indicate higher inconsistency scores, and object boundaries are marked in yellow. The examples illustrate false positives caused by pose-estimation errors and visually unusual but geometrically consistent regions, as well as the improved localization produced by DEFECt3R.
+    }
+    
+    \label{figure:evaluation-full}
+    
+\end{figure*}

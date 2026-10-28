@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DeformView &amp; DEFECt3R | Project Page</title>
+  <meta name="description" content="Project page for Geometric Inconsistency Localization in Multi-View Image Sets, introducing the DeformView dataset and the DEFECt3R method.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500,700|Noto+Sans:400,500,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+</head>
+<body>
+  <nav class="navbar is-light is-fixed-top top-nav" role="navigation" aria-label="main navigation">
+    <div class="container is-max-desktop">
+      <div class="navbar-brand">
+        <a class="navbar-item nav-brand" href="#top">DeformView &amp; DEFECt3R</a>
+      </div>
+      <div class="navbar-menu is-active">
+        <div class="navbar-end">
+          <a class="navbar-item" href="#abstract">Abstract</a>
+          <a class="navbar-item" href="#problem">Problem</a>
+          <a class="navbar-item" href="#dataset">Dataset</a>
+          <a class="navbar-item" href="#method">Method</a>
+          <a class="navbar-item" href="#results">Results</a>
+          <a class="navbar-item" href="#citation">Citation</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero paper-hero" id="top">
+    <div class="hero-body">
+      <div class="container is-max-desktop has-text-centered">
+        <h1 class="title is-1 publication-title">
+          <span class="accent">Geometric Inconsistency</span> Localization</br>
+          <span class="title-smaller">in Multi-View Image Sets</span>
+        </h1>
+        <div class="is-size-5 publication-venue">
+          <span>
+            2nd Deepfake Forensics Workshop (DFF) at ACM Multimedia, 2026
+          </span>
+        </div>
+        <div class="is-size-5 publication-authors">
+          <span class="author-block"><a href="https://scholar.google.com/citations?user=5IKGkfcAAAAJ" target="_blank" rel="noopener">Xander Staelens</a>,</span>
+          <span class="author-block">Albéric Loos,</span>
+          <span class="author-block"><a href="https://scholar.google.com/citations?user=yCGisnIAAAAJ" target="_blank" rel="noopener">Bert Ramlot</a>,</span>
+          <span class="author-block"><a href="https://scholar.google.com/citations?user=SNmMEJEAAAAJ" target="_blank" rel="noopener">Hannes Mareen</a>,</span>
+          <span class="author-block"><a href="https://scholar.google.com/citations?user=0Y690dMAAAAJ" target="_blank" rel="noopener">Peter Lambert</a>,</span>
+          <span class="author-block"><a href="https://scholar.google.com/citations?user=CaDakRwAAAAJ" target="_blank" rel="noopener">Glenn Van Wallendael</a></span>
+        </div>
+        <div class="is-size-5 publication-authors">
+          <span class="author-block">IDLab, Ghent University – imec</span>
+        </div>
+        <div class="publication-links">
+          <span class="link-block">
+            <a href="https://doi.org/10.1145/3840473.3840513" class="external-link button is-normal is-rounded is-primary" target="_blank" rel="noopener">
+              <span class="icon"><i class="fas fa-file-pdf"></i></span>
+              <span>Paper</span>
+            </a>
+          </span>
+          <span class="link-block">
+            <a href="https://arxiv.org/abs/2609.31247" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener">
+              <span class="icon"><i class="ai ai-arxiv"></i></span>
+              <span>arXiv</span>
+            </a>
+          </span>
+          <span class="link-block">
+            <a href="https://github.com/IDLabMedia/DeformView-DEFECt3R" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener">
+              <span class="icon"><i class="fab fa-github"></i></span>
+              <span>Code</span>
+            </a>
+          </span>
+          <span class="link-block">
+            <a href="https://github.com/IDLabMedia/DeformView-DEFECt3R" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener">
+              <span class="icon"><i class="fas fa-database"></i></span>
+              <span>Dataset</span>
+            </a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero-figure-section">
+    <div class="container is-max-desktop">
+      <div class="hero-figure-grid">
+        <figure class="hero-panel"><figcaption class="panel-label view1">View 1</figcaption><img class="framed view1" src="./visuals/poster/hero_view1.jpg" alt="View 1 of the object"></figure>
+        <div class="hero-arrow">
+          <span>Geometrically<br>inconsistent</span>
+          <div class="arrow-line" aria-hidden="true"></div>
+        </div>
+        <figure class="hero-panel"><figcaption class="panel-label view2">View 2</figcaption><img class="framed view2" src="./visuals/poster/hero_view2.jpg" alt="View 2 of the object, with a deformed region"></figure>
+        <figure class="hero-panel"><figcaption class="panel-label met3r">MEt3R</figcaption><img class="framed met3r" src="./visuals/poster/hero_met3r.png" alt="MEt3R response"></figure>
+        <figure class="hero-panel"><figcaption class="panel-label defect3r">DEFECt3R <span class="ours">(ours)</span></figcaption><img class="framed defect3r" src="./visuals/poster/hero_defect3r.png" alt="DEFECt3R prediction"></figure>
+        <figure class="hero-panel"><figcaption class="panel-label gt">Ground truth</figcaption><img class="framed gt" src="./visuals/poster/hero_gt.png" alt="Ground-truth inconsistency mask"></figure>
+      </div>
+      <p class="figure-caption">Two views of the same object look plausible in isolation, yet they are <b>geometrically inconsistent</b> with one another. Existing consistency methods such as <b class="met3r">MEt3R</b> produce a global score and respond to large consistent regions. Our <b class="defect3r">DEFECt3R</b> directly localizes the inconsistency at the pixel level (red = inconsistent, blue = consistent).</p>
+    </div>
+  </section>
+
+  <section class="section" id="abstract">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3 section-title">Abstract</h2>
+          <div class="content has-text-justified abstract-box">
+            <p>
+              Novel view synthesis (NVS) models can produce realistic new views of the same scene from different viewpoints. However, these generated views are not always <b class="accent">geometrically consistent</b> with one another. Multi-view (MV) consistency has shown promise as a tool for evaluating these NVS models. Its potential for multimedia forensics, however, remains largely unexplored, particularly for localizing geometric inconsistencies across wide-baseline image pairs.</br></br>
+
+              To enable research in this direction, we introduce <b class="dataset">DeformView</b>, a wide-baseline MV dataset with pixel-level annotations of geometric inconsistencies. Using DeformView, we evaluate state-of-the-art MV consistency-scoring methods and show that approaches developed for NVS evaluation transfer poorly to the forensic task of geometric inconsistency localization.</br></br>
+
+              To address this limitation, we propose <b class="defect3r">DEFECt3R</b>, a lightweight learning-based classifier that uses cross-view feature relationships to localize geometric inconsistencies at the pixel level. By learning from explicit supervision, including <b class="hard-negative">hard negatives</b> from geometrically consistent yet deformed views, DEFECt3R improves localization performance and substantially reduces false positives compared to existing consistency-scoring methods. Ablation experiments further show that both feature representations and correspondence quality contribute to localization performance.</br></br>
+
+              Overall, our findings demonstrate that MV geometric consistency is a promising yet underexplored signal for multimedia forensics and establish a benchmark and baseline for geometric inconsistency localization in wide-baseline MV image pairs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt-section" id="problem">
+    <div class="container is-max-desktop">
+      <div class="has-text-centered section-heading">
+        <h2 class="title is-3 section-title">Can geometric inconsistency expose<br class="wide-only"> <span class="keep-together">fake multi-view image sets?</span></h2>
+        <p class="section-lead">
+          Generative models can create realistic novel views of a scene, enabling fake <b>multi-view image sets</b>. However, keeping these views <b class="accent">geometrically consistent</b> is challenging: real photographs share one physical geometry, generative models are not constrained to it. This weakness can serve as a <b>forensic signal</b>, yet it remains largely unexplored, for two reasons.
+        </p>
+      </div>
+
+      <div class="columns is-variable is-6">
+        <div class="column">
+          <div class="method-card problem-card">
+            <h3 class="title is-5"><span class="problem-icon"><i class="fas fa-layer-group"></i></span>Existing datasets fall short</h3>
+            <p>No dataset combines:</p>
+            <ul class="check-list">
+              <li><b>Wide-baseline</b> image pairs with large viewpoint changes,</li>
+              <li><b>pixel-level labels</b> of where the views disagree, and</li>
+              <li><span class="term-trigger hard-negative"><b>hard negatives</b><span class="term-popup"><strong>Hard negatives</strong> are pairs of two views of the <em>same deformed</em> object. They look unusual, but remain geometrically consistent across views. A good method should <strong>not</strong> flag them.</span></span>: deformed, yet still consistent views.</li>
+            </ul>
+            <p class="card-note">Prior datasets annotate at object level, or warp each image independently, so the same deformation can never be seen consistently from two viewpoints.</p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="method-card problem-card">
+            <h3 class="title is-5"><span class="problem-icon"><i class="fas fa-cube"></i></span>Existing methods fall short</h3>
+            <p>State-of-the-art methods either:</p>
+            <ul class="check-list">
+              <li>give only a global score with <b>no localization</b> (<span class="met3r">MEt3R</span>),</li>
+              <li>rely on <b>handcrafted</b> epipolar rules and known poses (<span class="tsed">TSED</span>), or</li>
+              <li>need <b>small viewpoint changes</b>, as in video (GeCo) or many views (3DCS).</li>
+            </ul>
+            <p class="card-note">They were designed to evaluate novel view synthesis, not to tell <em>whether</em> and <em>where</em> two views contradict each other.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="dataset">
+    <div class="container is-max-desktop">
+      <div class="has-text-centered section-heading">
+        <h2 class="title is-3 section-title">Proposed dataset: <span class="dataset">DeformView</span></h2>
+        <p class="section-lead">
+          We apply a <b>localized sinusoidal deformation</b> directly to 3D object meshes from Google Scanned Objects, and render original and deformed meshes in a shared textured room. Because the deformation lives in 3D, it can be rendered consistently from any viewpoint, yielding exact pixel-level ground truth.
+        </p>
+      </div>
+
+      <figure class="poster-panel">
+        <img src="./visuals/poster/dataset.jpg" alt="Original and deformed mesh in a textured room, surrounded by a ring of 24 cameras">
+      </figure>
+      <p class="figure-caption">Each object is rendered from a ring of 24 cameras around both the original and the deformed mesh. The highlighted cameras show one example of each pair type: <b class="positive">blue</b> = positive, <b class="negative">yellow</b> = negative, <b class="hard-negative">red</b> = hard negative.</p>
+
+      <div class="stat-grid">
+        <div class="stat-card"><div class="stat-number">1,029</div><div class="stat-label">3D objects, each with an original &amp; deformed mesh</div></div>
+        <div class="stat-card"><div class="stat-number">24</div><div class="stat-label">viewpoints per object, spaced 15° apart</div></div>
+        <div class="stat-card"><div class="stat-number">≤120°</div><div class="stat-label">viewpoint difference: a wide-baseline setting</div></div>
+        <div class="stat-card"><div class="stat-number">8–16%</div><div class="stat-label">of mesh faces deformed, in one contiguous region</div></div>
+      </div>
+
+      <div class="content-block">
+        <h3 class="title is-4 has-text-centered">Three pair types</h3>
+        <div class="pair-type-grid">
+          <div class="pair-type-card positive">
+            <span class="pair-tag positive">Positive</span>
+            <div class="pair-cams"><span class="cam"><i class="fas fa-camera"></i>original</span><span class="cam-link"></span><span class="cam"><i class="fas fa-camera"></i>deformed</span></div>
+            <p>One view of the original and one of the deformed mesh. The views are <b>inconsistent</b> exactly in the deformed region, given by the ground-truth mask.</p>
+          </div>
+          <div class="pair-type-card negative">
+            <span class="pair-tag negative">Negative</span>
+            <div class="pair-cams"><span class="cam"><i class="fas fa-camera"></i>original</span><span class="cam-link"></span><span class="cam"><i class="fas fa-camera"></i>original</span></div>
+            <p>Two views of the original mesh. The pair is <b>consistent</b> and should produce no inconsistency response.</p>
+          </div>
+          <div class="pair-type-card hard-negative">
+            <span class="pair-tag hard-negative">Hard negative</span>
+            <div class="pair-cams"><span class="cam"><i class="fas fa-camera"></i>deformed</span><span class="cam-link"></span><span class="cam"><i class="fas fa-camera"></i>deformed</span></div>
+            <p>Two views of the same deformed mesh. Unusual geometry, yet <b>consistent</b>: methods must verify cross-view disagreement, not just spot deformations.</p>
+          </div>
+        </div>
+        <p class="table-footnote has-text-centered">Split at object level into train (75%), validation (15%) and test (10%), so no object appears in more than one split.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt-section" id="method">
+    <div class="container is-max-desktop">
+      <div class="has-text-centered section-heading">
+        <h2 class="title is-3 section-title">Proposed method: <span class="defect3r">DEFECt3R</span></h2>
+        <p class="section-lead">
+          <b class="met3r">MEt3R</b> treats the dissimilarity of aligned features as inconsistency. But features also differ for geometrically consistent deformations, or when a correspondence error compares unrelated regions. <b class="defect3r">DEFECt3R</b> therefore <b>learns</b> whether aligned <b>DINO</b> and <b>MASt3R</b> feature differences reflect a genuine geometric inconsistency.
+        </p>
+      </div>
+
+      <figure class="poster-panel">
+        <img src="./visuals/poster/method.jpg" alt="Overview of DEFECt3R and its relation to MEt3R">
+      </figure>
+      <p class="figure-caption">Both views are encoded with DINO + FeatUp; MASt3R estimates pixel correspondences to project <span class="view2">View 2</span> onto <span class="view1">View 1</span>. Where <b class="met3r">MEt3R</b> takes the cosine similarity of the aligned features, <b class="defect3r">DEFECt3R</b> feeds the DINO and MASt3R feature differences into a small trained classifier. All backbones stay frozen.</p>
+
+      <div class="columns is-variable is-6 method-columns">
+        <div class="column">
+          <div class="method-card">
+            <h3 class="title is-5">A lightweight per-pixel classifier</h3>
+            <p>
+              For each aligned pixel pair we take the difference of the L2-normalized DINO features (384-d) and MASt3R features (24-d). The DINO difference is projected to 64-d (384→128→64), concatenated with the MASt3R difference, and a second MLP (88→64→1) predicts an inconsistency probability. Each pixel is classified independently, so no spatial aggregation is needed: the classifier has only <b>~63k</b> trainable parameters.
+            </p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="method-card">
+            <h3 class="title is-5">Learning from hard negatives</h3>
+            <p>
+              The classifier is trained on DeformView with focal loss, using all foreground pixels and a 10% subsample of the background. Because the supervision includes <b class="hard-negative">hard negatives</b> (deformed–deformed pairs), the model learns to separate true cross-view disagreement from visual deformation and from reprojection artifacts caused by correspondence errors.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="results">
+    <div class="container is-max-desktop">
+      <div class="has-text-centered section-heading">
+        <h2 class="title is-3 section-title">Results</h2>
+        <p class="section-lead">
+          Consistency-scoring methods built for novel view synthesis (NVS) evaluation transfer poorly to forensic localization. <b class="defect3r">DEFECt3R</b> outperforms <b class="met3r">MEt3R</b> and <b class="tsed">TSED</b> at both the pixel and the pair level, while drastically reducing false positives.
+        </p>
+      </div>
+
+      <div class="highlight-grid">
+        <div class="highlight-card">
+          <span class="highlight-tag"><i class="fas fa-crosshairs"></i>Localization accuracy</span>
+          <p class="highlight-text">More accurate inconsistency localization</p>
+          <p class="highlight-number"><span class="term-trigger">AUC<span class="term-popup"><strong>AUC</strong>: area under the ROC curve over all foreground pixels of the test set. It measures how well inconsistent pixels are ranked above consistent ones, independent of a threshold. 0.5 = chance.</span></span> <span class="met3r">0.60</span> <span class="arrow">→</span> <b class="defect3r">0.76</b></p>
+          <!-- <p class="highlight-sub">0.81 with ground-truth poses</p> -->
+        </div>
+        <div class="highlight-card">
+          <span class="highlight-tag"><i class="fas fa-arrows-left-right"></i>Correspondence errors</span>
+          <p class="highlight-text">Suppresses false positives from correspondence errors</p>
+          <p class="highlight-number"><span class="term-trigger">FPR<span class="term-popup"><strong>False-positive rate</strong>: the fraction of pixels flagged as inconsistent in pairs that are in fact fully consistent. Lower is better.</span></span> <span class="met3r">47%</span> <span class="arrow">→</span> <b class="defect3r">1.5%</b></p>
+          <p class="highlight-sub">original–original pairs</p>
+        </div>
+        <div class="highlight-card">
+          <span class="highlight-tag"><i class="fas fa-shapes"></i>Visual deformations</span>
+          <p class="highlight-text">Distinguishes visual deformations from inconsistencies</p>
+          <p class="highlight-number"><span class="term-trigger">FPR<span class="term-popup"><strong>False-positive rate</strong> inside the deformed region of deformed–deformed pairs: the region looks unusual, but is geometrically consistent. Lower is better.</span></span> <span class="met3r">61%</span> <span class="arrow">→</span> <b class="defect3r">1.5%</b></p>
+          <p class="highlight-sub">deformed regions</p>
+        </div>
+      </div>
+
+      <!-- Qualitative examples -->
+      <div class="content-block">
+        <h3 class="title is-4">Visual comparison</h3>
+        <p class="section-note">
+          Predictions on DeformView test pairs, shown from the perspective of <span class="view1">View 1</span> (red = inconsistent, blue = consistent, yellow = object outline). Switch between MASt3R-estimated and ground-truth camera poses at any time, and hover <span class="peek-pill inline"><i class="fas fa-eye"></i>Peek DINO only</span> on a DEFECt3R prediction to compare it with the variant trained without MASt3R features.
+        </p>
+
+        <div class="comparison-group figure-breakout qualitative" data-pose="mastr">
+          <div class="sticky-head">
+            <div class="pose-toggle" role="group" aria-label="Pose estimation">
+              <button class="pose-btn is-active" data-pose="mastr" type="button">MASt3R poses</button>
+              <button class="pose-btn" data-pose="gt" type="button">Ground-truth poses</button>
+            </div>
+            <div class="five-col-grid grid-header">
+              <div class="figure-table-header view1">View 1</div>
+              <div class="figure-table-header view2">View 2</div>
+              <div class="figure-table-header">Ground truth</div>
+              <div class="figure-table-header met3r">MEt3R</div>
+              <div class="figure-table-header defect3r">
+                <span>DEFECt3R&nbsp;<span class="ours">(ours)</span></span>
+                <span class="feature-note" data-mastr="DINO + MASt3R features" data-gt="DINO features">DINO + MASt3R features</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pair-group">
+            <div class="pair-group-head"><span class="model-divider positive">Positive · original–deformed</span></div>
+            <div class="five-col-grid example-row" data-pair="pair_00645_real_def"></div>
+            <div class="five-col-grid example-row" data-pair="pair_12132_real_def"></div>
+            <div class="five-col-grid example-row" data-pair="pair_12745_real_def"></div>
+          </div>
+
+          <div class="pair-group">
+            <div class="pair-group-head"><span class="model-divider negative">Negative · original–original</span></div>
+            <div class="five-col-grid example-row" data-pair="pair_00400_real_real"></div>
+            <div class="five-col-grid example-row" data-pair="pair_01516_real_real"></div>
+            <div class="five-col-grid example-row" data-pair="pair_04360_real_real"></div>
+          </div>
+
+          <div class="pair-group">
+            <div class="pair-group-head"><span class="model-divider hard-negative">Hard negative · deformed–deformed</span></div>
+            <div class="five-col-grid example-row" data-pair="pair_03517_def_def"></div>
+            <div class="five-col-grid example-row" data-pair="pair_04212_def_def"></div>
+            <div class="five-col-grid example-row" data-pair="pair_05730_def_def"></div>
+          </div>
+        </div>
+        <p class="table-footnote">With MASt3R poses, large viewpoint differences sometimes cause severely wrong correspondences, so unrelated object parts are compared. MEt3R flags these as inconsistent, while DEFECt3R is able to suppress many of them.</p>
+      </div>
+
+      <!-- Pixel-level table -->
+      <div class="content-block">
+        <h3 class="title is-4">Pixel-level localization</h3>
+        <p class="section-note">Results on the DeformView test set, for all pairs and per pair type. Background pixels are excluded. For the all-negative pair types, the false-positive rate (FPR) is reported. <strong>Best</strong> and <u>second best</u> are marked.</p>
+        <div class="table-wrap">
+          <table class="results-table">
+            <colgroup><col><col><col><col><col class="ours-col"><col class="ours-col"><col class="ours-col"></colgroup>
+            <thead>
+              <tr class="method-row">
+                <th colspan="2"></th>
+                <th colspan="2" class="met3r">MEt3R</th>
+                <th colspan="3" class="defect3r">DEFECt3R (ours)</th>
+              </tr>
+              <tr class="config-row">
+                <th colspan="2" class="row-label">Features</th>
+                <th>DINO</th><th>DINO</th>
+                <th>DINO+MASt3R</th><th>DINO</th><th>DINO</th>
+              </tr>
+              <tr class="config-row">
+                <th colspan="2" class="row-label">Poses</th>
+                <th>MASt3R</th><th>GT</th>
+                <th>MASt3R</th><th>MASt3R</th><th>GT</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th rowspan="4" class="subset">All pairs</th><td class="metric">AUC ↑</td><td>0.595</td><td>0.595</td><td><u>0.759</u></td><td>0.732</td><td><strong>0.809</strong></td></tr>
+              <tr><td class="metric">F1 ↑</td><td>0.063</td><td>0.051</td><td><u>0.168</u></td><td>0.145</td><td><strong>0.207</strong></td></tr>
+              <tr><td class="metric">Precision ↑</td><td>0.033</td><td>0.027</td><td><u>0.140</u></td><td>0.109</td><td><strong>0.184</strong></td></tr>
+              <tr><td class="metric">Recall ↑</td><td><strong>0.640</strong></td><td><u>0.390</u></td><td>0.208</td><td>0.218</td><td>0.238</td></tr>
+            </tbody>
+            <tbody>
+              <tr><th rowspan="4" class="subset positive">Positive</th><td class="metric">AUC ↑</td><td>0.583</td><td>0.571</td><td><u>0.683</u></td><td>0.661</td><td><strong>0.723</strong></td></tr>
+              <tr><td class="metric">F1 ↑</td><td>0.169</td><td>0.133</td><td><u>0.205</u></td><td>0.197</td><td><strong>0.235</strong></td></tr>
+              <tr><td class="metric">Precision ↑</td><td>0.098</td><td>0.080</td><td><u>0.202</u></td><td>0.180</td><td><strong>0.232</strong></td></tr>
+              <tr><td class="metric">Recall ↑</td><td><strong>0.640</strong></td><td><u>0.390</u></td><td>0.208</td><td>0.218</td><td>0.238</td></tr>
+            </tbody>
+            <tbody>
+              <tr><th rowspan="2" class="subset hard-negative">Hard negative</th><td class="metric">FPR ↓ <span class="sub">deformed</span></td><td>0.613</td><td>0.345</td><td><strong>0.015</strong></td><td><u>0.016</u></td><td>0.017</td></tr>
+              <tr><td class="metric">FPR ↓ <span class="sub">rest</span></td><td>0.488</td><td>0.290</td><td><u>0.020</u></td><td>0.031</td><td><strong>0.009</strong></td></tr>
+            </tbody>
+            <tbody>
+              <tr><th class="subset negative">Negative</th><td class="metric">FPR ↓</td><td>0.470</td><td>0.293</td><td><u>0.015</u></td><td>0.030</td><td><strong>0.007</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-footnote">Recall is identical for all pairs and positive pairs, since positive pixels only occur in positive pairs. DEFECt3R is more conservative than MEt3R: lower recall, but higher precision. Both better correspondences and MASt3R features help, the former the most.</p>
+      </div>
+
+      <!-- Pair-level -->
+      <div class="content-block">
+        <h3 class="title is-4">Pair-level detection</h3>
+        <p class="section-note">One decision per image pair: is it consistent or not? DEFECt3R's pixel scores are aggregated with the 99th percentile. TSED and MEt3R stay close to chance, independently of which aggregation or correspondences are used.</p>
+
+        <!-- <div class="auc-chart" aria-label="Pair-level AUC with MASt3R poses">
+          <div class="auc-title">AUC <span class="muted">(MASt3R poses)</span></div>
+          <div class="auc-row"><span class="auc-name tsed">TSED</span><div class="auc-track"><div class="auc-bar tsed" style="width:48.4%"><span>0.48</span></div></div></div>
+          <div class="auc-row"><span class="auc-name met3r">MEt3R</span><div class="auc-track"><div class="auc-bar met3r" style="width:50.0%"><span>0.50</span></div></div></div>
+          <div class="auc-row"><span class="auc-name defect3r">DEFECt3R</span><div class="auc-track"><div class="auc-bar defect3r" style="width:71.3%"><span>0.71</span></div></div></div>
+          <div class="auc-chance" aria-hidden="true"><span>chance</span></div>
+        </div> -->
+
+        <div class="table-wrap">
+          <table class="results-table">
+            <colgroup><col><col><col><col><col><col><col><col class="ours-col"><col class="ours-col"><col class="ours-col"></colgroup>
+            <thead>
+              <tr class="method-row">
+                <th></th>
+                <th colspan="2" class="tsed">TSED</th>
+                <th colspan="4" class="met3r">MEt3R</th>
+                <th colspan="3" class="defect3r">DEFECt3R (ours)</th>
+              </tr>
+              <tr class="config-row">
+                <th class="row-label">Features</th>
+                <th></th><th></th>
+                <th>DINO</th><th>DINO</th><th>DINO</th><th>DINO</th>
+                <th>DINO+MASt3R</th><th>DINO</th><th>DINO</th>
+              </tr>
+              <tr class="config-row">
+                <th class="row-label">Aggregation</th>
+                <th></th><th></th>
+                <th>Mean</th><th>Mean</th><th>99th</th><th>99th</th>
+                <th>99th</th><th>99th</th><th>99th</th>
+              </tr>
+              <tr class="config-row">
+                <th class="row-label">Poses</th>
+                <th>MASt3R</th><th>GT</th>
+                <th>MASt3R</th><th>GT</th><th>MASt3R</th><th>GT</th>
+                <th>MASt3R</th><th>MASt3R</th><th>GT</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="metric">AUC ↑</td><td>0.484</td><td>0.520</td><td>0.500</td><td>0.516</td><td>0.513</td><td>0.516</td><td><u>0.713</u></td><td>0.679</td><td><strong>0.737</strong></td></tr>
+              <tr><td class="metric">F1 ↑</td><td>0.316</td><td>0.325</td><td>0.482</td><td>0.480</td><td>0.481</td><td>0.478</td><td><u>0.537</u></td><td>0.528</td><td><strong>0.558</strong></td></tr>
+              <tr><td class="metric">Precision ↑</td><td>0.316</td><td>0.325</td><td>0.319</td><td>0.317</td><td>0.319</td><td>0.314</td><td>0.394</td><td><u>0.404</u></td><td><strong>0.510</strong></td></tr>
+              <tr class="muted-row"><td class="metric">Recall</td><td>0.904</td><td>0.958</td><td>0.992</td><td>0.993</td><td>0.977</td><td>0.993</td><td>0.843</td><td>0.764</td><td>0.616</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-footnote">Recall is not highlighted: with AUCs near 0.5, the F1-optimal threshold of TSED and MEt3R simply flags almost every pair as inconsistent, leading to very high recalls.</p>
+      </div>
+
+      <div class="content-block">
+        <div class="takeaways">
+          <h3 class="title is-4">Takeaways</h3>
+          <ul>
+            <li>Geometric inconsistency shows <b>potential as a forensic signal</b>.</li>
+            <li><b class="dataset">DeformView</b> <b>enables training and evaluation</b> of localization methods.</li>
+            <li><b>Correspondence quality</b> remains a <b>major bottleneck</b>.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt-section" id="citation">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3 section-title has-text-centered">Citation</h2>
+          <div class="bibtex-wrap">
+          <button class="copy-btn" type="button" aria-label="Copy citation" title="Copy citation"><i class="far fa-copy"></i></button>
+          <pre class="bibtex-block"><code>@inproceedings{Staelens_2026_DFF,
+    author    = {Staelens, Xander and Loos, Alb\'{e}ric and Ramlot, Bert and Mareen, Hannes and Lambert, Peter and Van Wallendael, Glenn},
+    title     = {Geometric Inconsistency Localization in Multi-View Image Sets},
+    booktitle = {Proceedings of the 2nd Deepfake Forensics Workshop: Detection, Attribution, Recognition, and Adversarial Challenges in the Era of AI-Generated Media (DFF '26)},
+    year      = {2026},
+    publisher = {ACM},
+    address   = {Rio de Janeiro, Brazil},
+    doi       = {10.1145/3840473.3840513}
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-4 has-text-centered">Acknowledgments</h2>
+          <p class="has-text-centered acknowledgments">This work was funded in part by IDLab (Ghent University – imec), by Flanders Innovation &amp; Entrepreneurship (VLAIO), by Research Foundation – Flanders (FWO) (1SA9O26N &amp; G0A2523N), and by the European Union.
+          DeformView is built on <a href="https://research.google/blog/scanned-objects-by-google-research-a-dataset-of-3d-scanned-common-household-items/" target="_blank" rel="noopener">Google Scanned Objects</a>, and DEFECt3R builds on <a href="https://geometric-rl.mpi-inf.mpg.de/met3r/" target="_blank" rel="noopener">MEt3R</a>, <a href="https://github.com/naver/mast3r" target="_blank" rel="noopener">MASt3R</a>, <a href="https://github.com/facebookresearch/dino" target="_blank" rel="noopener">DINO</a> and <a href="https://mhamilton.net/featup" target="_blank" rel="noopener">FeatUp</a>.</br>
+          This project page was adapted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer footer-small">
+    <div class="content has-text-centered">
+      <p>Project page for <strong>DeformView &amp; DEFECt3R</strong> · IDLab, Ghent University – imec</p>
+    </div>
+  </footer>
+
+  <script src="./static/js/index.js"></script>
+</body>
+</html>

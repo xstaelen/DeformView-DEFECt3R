@@ -1,0 +1,87 @@
+\begin{table*}[tb]
+    \centering
+    % \footnotesize
+    % \setlength{\tabcolsep}{5.5pt} % column space to make it smaller
+
+    \newcommand{\best}[1]{\textbf{#1}}
+    \newcommand{\seco}[1]{\underline{#1}}
+    \newcommand{\othe}[1]{#1}
+
+
+    %%% FULL PAGE VERTICAL CENTERING
+    % \vspace{1.5em}
+    
+
+    \caption{
+        Pair-level geometric inconsistency classification performance of TSED~\cite{TSED}, MEt3R~\cite{MEt3R}, and DEFECt3R (\Cref{sec:method}) on the DeformView test set (\Cref{sec:dataset}). 
+        %
+        Results are reported using different feature representations (DINO and DINO+MASt3R), correspondence estimation methods (ground-truth and MASt3R-estimated camera poses), and aggregation strategies (mean and 99th-percentile).
+        %
+        Best and second-best results are shown in bold and underlined, respectively. 
+        Recall values are not highlighted, as they primarily reflect the selected operating point rather than the underlying discriminative ability of the model.
+        %
+        DEFECt3R substantially outperforms existing consistency-scoring methods. Similar to the pixel-level results, the largest gains are obtained from improved correspondences, while MASt3R features provide an additional benefit. 
+    }
+    \label{table:evaluation-pair-level}
+
+    \begin{tabular}{l c c c c c c c c c}
+        
+        \toprule
+        
+        % Subset & 
+        \textbf{Metric}
+        & \multicolumn{2}{c}{\textbf{TSED}~\cite{TSED}}
+        
+        & \multicolumn{4}{c}{\textbf{MEt3R}~\cite{MEt3R}}
+        
+        & \multicolumn{3}{c}{\textbf{DEFECt3R (ours)}} \\
+
+        
+        Features
+        & & & DINO & DINO & DINO & DINO & DINO+MASt3R & DINO & DINO \\
+        
+        Aggregation
+        % & &  
+        % & \multicolumn{2}{c}{Mean} 
+        % & \multicolumn{2}{c}{99th} 
+        % & \multicolumn{3}{c}{99th}  \\
+        & & & Mean & Mean & 99th & 99th & 99th & 99th & 99th \\
+
+        Pose estimation
+        & MASt3R & GT & MASt3R & GT & MASt3R & GT & MASt3R & MASt3R & GT \\
+        
+
+        % & Known & MASt3R & Mean & 99.7th & 99.7th \\
+        
+        % \cmidrule(lr){1-1}
+        % \cmidrule(lr){2-2}
+        % \cmidrule(lr){3-5}
+        
+        \cmidrule(lr){1-1}
+        \cmidrule(lr){2-3}
+        % \cmidrule(lr){4-5}
+        % \cmidrule(lr){6-7}
+        \cmidrule(lr){4-7}
+        \cmidrule(lr){8-10}
+        
+
+        AUC ↑            & \othe{\tr{0.4835}} & \othe{\tr{0.5204}} & \othe{\tr{0.4997}} & \othe{\tr{0.5155}} & \othe{\tr{0.5130}} & \othe{\tr{0.5157}} & \seco{\tr{0.7126}} & \othe{\tr{0.6788}} & \best{\tr{0.7373}} \\
+        % &
+        F1-score ↑       & \othe{\tr{0.3159}} & \othe{\tr{0.3253}} & \othe{\tr{0.4822}} & \othe{\tr{0.4803}} & \othe{\tr{0.4810}} & \othe{\tr{0.4776}} & \seco{\tr{0.5370}} & \othe{\tr{0.5282}} & \best{\tr{0.5579}}  \\
+        % & 
+        Precision ↑      & \othe{\tr{0.3159}} & \othe{\tr{0.3253}} & \othe{\tr{0.319}}  & \othe{\tr{0.317}}  & \othe{\tr{0.319}}  & \othe{\tr{0.314}}  & \othe{\tr{0.394}}  & \seco{\tr{0.404}}  & \best{\tr{0.510}}  \\
+        % & 
+        % Recall ↑         & \othe{\tr{0.9042}} & \othe{\tr{0.9583}} & \seco{\tr{0.992}}  & \best{\tr{0.993}}  & \othe{\tr{0.977}}  & \best{\tr{0.993}}  & \othe{\tr{0.843}}  & \othe{\tr{0.764}}  & \othe{\tr{0.616}}  \\
+        % & NON HIGHTLIGHTED
+        Recall ↑         & \tr{0.9042} & \tr{0.9583} & \tr{0.992}  & \tr{0.993}  & \tr{0.977}  & \tr{0.993}  & \tr{0.843}  & \tr{0.764}  & \tr{0.616}  \\
+
+        
+        \bottomrule
+        
+    \end{tabular}
+
+    % %%% FULL PAGE VERTICAL CENTERING
+    % \vspace{6em}
+    % \vspace{-0.5em}
+    
+\end{table*}
