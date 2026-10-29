@@ -72,6 +72,11 @@ function updateStickyOffsets() {
 updateStickyOffsets();
 window.addEventListener('resize', updateStickyOffsets);
 window.addEventListener('load', updateStickyOffsets);
+// the header can also change height without a window resize (e.g. the feature note wraps
+// differently after switching poses), so re-measure whenever its size changes
+if (stickyHead && 'ResizeObserver' in window) {
+  new ResizeObserver(updateStickyOffsets).observe(stickyHead);
+}
 
 // Pair-type labels: click to align that group just below the sticky header
 document.querySelectorAll('.pair-group-head .model-divider').forEach(label => {
@@ -83,6 +88,17 @@ document.querySelectorAll('.pair-group-head .model-divider').forEach(label => {
   label.addEventListener('keydown', e => {
     if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); }
   });
+});
+
+// Results dropdown: close after a choice, even while the mouse still hovers it
+document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
+  dropdown.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      dropdown.classList.add('is-closed');
+      link.blur();
+    });
+  });
+  dropdown.addEventListener('mouseleave', () => dropdown.classList.remove('is-closed'));
 });
 
 // "Citation" in the navbar: show the takeaways together with the citation

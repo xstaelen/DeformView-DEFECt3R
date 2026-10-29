@@ -35,7 +35,14 @@
           <a class="navbar-item" href="#problem">Problem</a>
           <a class="navbar-item" href="#dataset">Dataset</a>
           <a class="navbar-item" href="#method">Method</a>
-          <a class="navbar-item" href="#results">Results</a>
+          <div class="nav-dropdown">
+            <a class="navbar-item" href="#results">Results<i class="fas fa-chevron-down nav-caret" aria-hidden="true"></i></a>
+            <div class="nav-dropdown-menu">
+              <a href="#visual-comparison">Visual comparison</a>
+              <a href="#pixel-level">Pixel-level localization</a>
+              <a href="#pair-level">Pair-level detection</a>
+            </div>
+          </div>
           <a class="navbar-item" href="#citation">Citation</a>
         </div>
       </div>
@@ -282,7 +289,7 @@
       </div>
 
       <!-- Qualitative examples -->
-      <div class="content-block">
+      <div class="content-block" id="visual-comparison">
         <h3 class="title is-4">Visual comparison</h3>
         <p class="section-note">
           Predictions on DeformView test pairs, shown from the perspective of <span class="view1">View 1</span> (red = inconsistent, blue = consistent, yellow = object outline). Switch between MASt3R-estimated and ground-truth camera poses at any time, and hover <span class="peek-pill inline"><i class="fas fa-eye"></i>Peek DINO only</span> on a DEFECt3R prediction to compare it with the variant trained without MASt3R features.
@@ -331,7 +338,7 @@
       </div>
 
       <!-- Pixel-level table -->
-      <div class="content-block">
+      <div class="content-block" id="pixel-level">
         <h3 class="title is-4">Pixel-level localization</h3>
         <p class="section-note">Results on the DeformView test set, for all pairs and per pair type. Background pixels are excluded. For the all-negative pair types, the false-positive rate (FPR) is reported. <strong>Best</strong> and <u>second best</u> are marked.</p>
         <div class="table-wrap">
@@ -379,7 +386,7 @@
       </div>
 
       <!-- Pair-level -->
-      <div class="content-block">
+      <div class="content-block" id="pair-level">
         <h3 class="title is-4">Pair-level detection</h3>
         <p class="section-note">One decision per image pair: is it consistent or not? DEFECt3R's pixel scores are aggregated with the 99th percentile. TSED and MEt3R stay close to chance, independently of which aggregation or correspondences are used.</p>
 

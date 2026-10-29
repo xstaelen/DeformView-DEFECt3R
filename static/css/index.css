@@ -142,6 +142,72 @@ h3,
   font-weight: 700;
 }
 
+/* Results dropdown: only on wide screens with a real mouse; elsewhere "Results" is a plain link */
+.nav-dropdown {
+  position: relative;
+  display: flex;
+}
+
+.nav-caret,
+.nav-dropdown-menu {
+  display: none;
+}
+
+@media (hover: hover) and (pointer: fine) and (min-width: 1024px) {
+  .nav-caret {
+    display: inline-block;
+    margin-left: 0.35rem;
+    font-size: 0.65rem;
+    transition: transform 0.15s;
+  }
+
+  .nav-dropdown-menu {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    min-width: 13rem;
+    padding: 0.4rem;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(20, 60, 80, 0.14);
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -6px);
+    transition: opacity 0.15s, transform 0.15s, visibility 0.15s;
+  }
+
+  .nav-dropdown-menu a {
+    display: block;
+    padding: 0.45rem 0.8rem;
+    border-radius: 8px;
+    color: var(--text);
+    font-family: 'Google Sans', 'Noto Sans', sans-serif;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .nav-dropdown-menu a:hover,
+  .nav-dropdown-menu a:focus-visible {
+    color: var(--primary);
+    background: var(--bg-soft);
+    outline: none;
+  }
+
+  .nav-dropdown:not(.is-closed):hover .nav-dropdown-menu,
+  .nav-dropdown:not(.is-closed):focus-within .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+  }
+
+  .nav-dropdown:not(.is-closed):hover .nav-caret,
+  .nav-dropdown:not(.is-closed):focus-within .nav-caret {
+    transform: rotate(180deg);
+  }
+}
+
 .paper-hero {
   padding-top: calc(var(--nav-h, 3.25rem) + 1.25rem);
   background: linear-gradient(180deg, #f5fafc 0%, #fff 100%);
@@ -706,6 +772,13 @@ img.framed.defect3r { border-color: var(--defect3r); }
 /* "Citation" in the navbar lands on the takeaways, so both are in view */
 .takeaways {
   scroll-margin-top: 1.5rem;
+}
+
+/* targets of the Results dropdown in the navbar */
+#visual-comparison,
+#pixel-level,
+#pair-level {
+  scroll-margin-top: 1.25rem;
 }
 
 .pair-group + .pair-group {
