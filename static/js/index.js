@@ -56,17 +56,31 @@ document.querySelectorAll('.peek-pill[data-alt]').forEach(pill => {
 // Sticky offsets: the grid header sits below the navbar, the pair-type label below the grid header
 const nav = document.querySelector('.top-nav');
 const stickyHead = document.querySelector('.sticky-head');
+const navToggle = document.querySelector('.nav-toggle');
+function setNavOpen(open) {
+  if (!nav) return;
+  nav.classList.toggle('is-open', open);
+  if (navToggle) navToggle.setAttribute('aria-expanded', String(open));
+}
 function updateNavLayout() {
   if (!nav) return;
   // center brand and links once the links no longer fit next to the brand
   const brand = nav.querySelector('.navbar-brand');
   const menu  = nav.querySelector('.navbar-menu');
-  nav.classList.remove('is-wrapped');
-  if (brand && menu && menu.offsetTop >= brand.offsetTop + brand.offsetHeight - 1) nav.classList.add('is-wrapped');
+  nav.classList.remove('is-wrapped', 'is-collapsible');
+  if (brand && menu && menu.offsetTop >= brand.offsetTop + brand.offsetHeight - 1) {
+    // links would need their own row(s): fold them behind the hamburger instead
+    nav.classList.add('is-wrapped', 'is-collapsible');
+  } else {
+    setNavOpen(false);
+  }
 }
 function updateStickyOffsets() {
   updateNavLayout();
-  if (nav) document.documentElement.style.setProperty('--nav-h', `${nav.offsetHeight}px`);
+  // offsets follow the closed navbar, so opening the menu doesn't shift the page
+  if (nav && !nav.classList.contains('is-open')) {
+    document.documentElement.style.setProperty('--nav-h', `${nav.offsetHeight}px`);
+  }
   if (qualitative && stickyHead) qualitative.style.setProperty('--head-h', `${stickyHead.offsetHeight}px`);
 }
 updateStickyOffsets();
@@ -76,6 +90,23 @@ window.addEventListener('load', updateStickyOffsets);
 // differently after switching poses), so re-measure whenever its size changes
 if (stickyHead && 'ResizeObserver' in window) {
   new ResizeObserver(updateStickyOffsets).observe(stickyHead);
+}
+
+// Hamburger: open/close the links; any choice, an outside tap or Escape closes them again
+if (nav && navToggle) {
+  navToggle.addEventListener('click', () => setNavOpen(!nav.classList.contains('is-open')));
+  nav.querySelectorAll('.navbar-menu a').forEach(link => {
+    link.addEventListener('click', () => setNavOpen(false));
+  });
+  document.addEventListener('click', e => {
+    if (nav.classList.contains('is-open') && !nav.contains(e.target)) setNavOpen(false);
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && nav.classList.contains('is-open')) {
+      setNavOpen(false);
+      navToggle.focus();
+    }
+  });
 }
 
 // Pair-type labels: click to align that group just below the sticky header
